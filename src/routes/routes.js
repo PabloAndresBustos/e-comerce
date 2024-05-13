@@ -1,5 +1,5 @@
+import { productos } from "../scripts/products.js";
 /* Carga de paginas externas */
-
 const pageLoad = (page) => {
 
     fetch(page)
@@ -11,6 +11,13 @@ const pageLoad = (page) => {
             console.log('Error al cargar la pagina', error);
         })
 
+}
+
+/* Carga de los scripts */
+const scriptLoad = (nameScript) => {
+    const script = document.createElement('script');
+    script.src = nameScript;
+    document.body.appendChild(script);
 }
 
 /* Manejador para la navegacion */
@@ -33,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
                 case 'products':
                     pageLoad('products.html')
+                    productos();
                     break;
                 default:
                     pageLoad('home.html')
