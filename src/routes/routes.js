@@ -16,13 +16,13 @@ const pageLoad = (page) => {
 /* Manejador para la navegacion */
 document.addEventListener('DOMContentLoaded', () => {
     
-    const navOptions = document.querySelectorAll('nav a');
+    const navOptions = document.querySelectorAll('nav li');
 
     navOptions.forEach( ancord => {
         ancord.addEventListener('click', (event) => {
             event.preventDefault();
             const href = ancord.getAttribute('href').substring(1);
-            console.log(href)
+
             /* Switch para el cambio de pagina */
             switch(href){
                 case 'home':
