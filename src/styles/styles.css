@@ -128,6 +128,23 @@ footer a:hover {
     cursor: pointer;
 }
 
+.nav-bar .buscar .shoping-cart .fas{
+    position: relative;
+    font-size: 24px;
+}
+
+.nav-bar .buscar .shoping-cart .fas::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    border-radius: 50%;
+    display: none;
+}
+
 /* HOME */
 .container {
     margin-top: 20px;

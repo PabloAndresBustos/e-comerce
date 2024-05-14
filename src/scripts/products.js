@@ -1,6 +1,6 @@
 import { allProducts } from "./cart.js";
 
-const productId = 0;
+let productId = 0;
 
 const productos = () => {
     fetch('https://fakestoreapi.com/products')
