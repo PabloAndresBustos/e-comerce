@@ -1,4 +1,4 @@
-import { allProducts } from "./cart.js";
+import { selectProduct } from "./cart.js";
 
 let productId = 0;
 
@@ -14,6 +14,10 @@ const productos = () => {
                 const card = document.createElement('div');
                 card.classList.add('card-container');
                 card.innerHTML = productCardTemplate;
+                card.querySelector('.body-card').dataset.productId = elemento.id;
+                card.querySelector('.body-card').dataset.price = elemento.price;
+                card.querySelector('.body-card').dataset.imagen = elemento.image;
+                card.querySelector('.body-card').dataset.title = elemento.title;
 
                 const header = card.querySelector('.header-card h3');
                 const image = card.querySelector('.main-card img');
@@ -24,18 +28,18 @@ const productos = () => {
                 image.src = elemento.image;
                 description.textContent = elemento.description;
                 price.textContent = 'Precio: ' + elemento.price;
-                productId = elemento.id
-
+            
                 container.appendChild(card);
+
             })
 
-            allProducts()
+            selectProduct()
         })
 
 }
 
 const productCardTemplate = `
-            <div class="body-card">
+            <div class="body-card" data-product-id="">
                 <section class="header-card">
                     <h3></h3>
                 </section>
@@ -49,16 +53,5 @@ const productCardTemplate = `
                 </section>
             </div>
 `
-
-const shoppingCart = `
-            <div>
-            <img src="">
-            <div>
-                <p>Nombre del producto</p>
-                <p>Precio</p>
-            </div>
-            </div>  
-` 
-
 
 export { productos };

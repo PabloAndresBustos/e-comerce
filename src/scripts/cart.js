@@ -1,27 +1,79 @@
 const selectedProducts = [];
-const cart = document.querySelector('.shoping-cart')
-const main = document.querySelector('#main-content')
+const cart = document.querySelector('.fas')
+const cartList = document.querySelector('.cart-list')
 
-const allProducts = () => {
+const selectProduct = () => {
     const products = document.querySelectorAll('.addProduct')
     products.forEach( button => {
         button.addEventListener('click', () => {
-            selectedProducts.push(button.parentElement.parentElement)
+
+            const cartList = document.querySelector('.cart-list');
+
+            //const productoId = button.parentElement.parentElement.dataset.productId
+            const productoImage = button.parentElement.parentElement.dataset.imagen
+            const productoTile = button.parentElement.parentElement.dataset.title
+            const productoPrice = button.parentElement.parentElement.dataset.price
+
+            const cart = document.createElement('div');
+            cart.classList.add('cart-body');
+            cart.innerHTML = productCartTemplate;
+
+            const imageList = document.querySelector('.image img')
+            const titleList = document.querySelector('.details h5')
+            const priceList = document.querySelector('.details p')
+
+            imageList.scr = productoImage
+            titleList.textContent = productoTile
+            priceList.textContent = productoPrice 
+
+            cartList.appendChild(cart)
+/* 
+            const newProduct = {
+                productoId,
+                productoImage,
+                productoPrice,
+                productoTile
+            }
+
+            if(!selectedProducts.includes(productoId)){
+                selectedProducts.push(newProduct)
+            }else{
+                console.log('el poducto ya esta en la lista')
+            } */
+            console.log(imageList,
+                titleList,
+                priceList)
         })
     })
 }
 
 cart.addEventListener('click', () => {
-    const pop = document.createElement('div')
-    pop.classList.add('cart')
-    pop.innerHTML = cartTemplate
-    console.log('hola')
-
-    main.appendChild(pop)
+    if(cartList.style.display === 'none'){
+        cartList.style.display = 'block'
+    }else{
+        cartList.style.display = 'none'
+    }
 })
 
-const cartTemplate = `
-        <h1>Hola</h1>
-`
 
-export { selectedProducts, allProducts }
+const productCartTemplate = `
+            <div class="cart-body">
+            <div class="image">
+                <img src="">
+            </div>
+            <div class="details">
+                <h5>Nombre producto</h5>
+                <p>Precio</p>
+            </div>
+            <div class="trash">
+                <button>Quitar</button>
+            </div>
+            </div>
+            <div class="cart-footer">
+            <button>Finalizar</button>
+            <p>Total</p>
+            <button>Limpiar Carrito</button>
+            </div>
+` 
+
+export { selectedProducts, selectProduct}

@@ -125,6 +125,7 @@ footer a:hover {
 }
 
 .nav-bar .buscar .shoping-cart{
+    position: relative;
     cursor: pointer;
 }
 
@@ -145,6 +146,69 @@ footer a:hover {
     display: none;
 }
 
+.nav-bar .buscar .shoping-cart .cart-list{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+    height: max-content;
+    padding: 10px;
+    top: 42px;
+    right: -10px;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    border-radius: 0 0 8px 8px;
+    color: black;
+    background-color: white;
+    display: none;
+    z-index: 10;
+}
+
+.nav-bar .buscar .shoping-cart .cart-list .cart-body{
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    display: flex;
+    gap: 18px;
+
+}
+
+.nav-bar .buscar .shoping-cart .cart-list .cart-body .trash{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 45px;
+    height: 35px;
+}
+
+.nav-bar .buscar .shoping-cart .cart-list .image img{
+    padding: 4px;
+    border: solid 1px black;
+    border-radius: 6px;
+    width: 75px;
+    height: 75px;
+}
+
+.nav-bar .buscar .shoping-cart .cart-list .details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-bar .buscar .shoping-cart .cart-list .cart-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    border-radius: 0 0 8px 8px;
+    color: white;
+}
 /* HOME */
 .container {
     margin-top: 20px;
