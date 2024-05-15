@@ -134,11 +134,11 @@ footer a:hover {
     font-size: 24px;
 }
 
-.nav-bar .buscar .shoping-cart .fas::after{
+.nav-bar .buscar .shoping-cart .notification{
     content: '';
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     top: -5px;
     right: -5px;
     background-color: red;
@@ -390,6 +390,16 @@ footer a:hover {
     background-color: white;
     color: black;
     cursor: pointer;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    gap: 20px;
+    
 }
 
 .congratulations{

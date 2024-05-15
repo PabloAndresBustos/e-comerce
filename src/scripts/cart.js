@@ -1,7 +1,8 @@
 const cart = document.querySelector('.fas');
 const cartList = document.querySelector('.cart-list');
 const clear = document.querySelector('.cart-clear');
-const end = document.querySelector('.end');
+const notification = document.querySelector('.notification')
+
 let suma = 0;
 
 const selectProduct = () => {
@@ -29,10 +30,11 @@ const selectProduct = () => {
             `;
 
             cartList.appendChild(cart);
-
+            
             suma += productoPrice;
             const finalPrice = document.querySelector('.cart-footer p');
             finalPrice.textContent = 'Total: ' + suma.toFixed(2);
+            notification.style.display = 'block';
         });
     });
 
@@ -62,6 +64,7 @@ clear.addEventListener('click', () => {
     suma = 0;
     lista.innerHTML = '';
     total.textContent = 'Total: ' + suma;
+    notification.style.display = 'none'
 });
 
 export { selectProduct };
