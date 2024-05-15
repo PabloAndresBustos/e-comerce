@@ -38,10 +38,12 @@ const selectProduct = () => {
         });
     });
 
-    // Asignar evento de clic a los botones "Quitar"
-    cartList.addEventListener('click', event => {
+    // Asignar evento de click a los botones "Quitar"
+    cartList.addEventListener('click', (event) => {
         if (event.target.classList.contains('remove')) {
-            const precioProducto = parseFloat(event.target.parentElement.previousElementSibling.querySelector('p').textContent.split(':')[1].trim());
+            const precioProducto = parseFloat(
+                event.target.parentElement.previousElementSibling.querySelector('p').textContent.split(':')[1].trim()
+            );
             suma -= precioProducto;
             event.target.parentElement.parentElement.remove();
             const finalPrice = document.querySelector('.cart-footer p');

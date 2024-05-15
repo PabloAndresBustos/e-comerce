@@ -27,28 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
             /* Switch para el cambio de pagina */
             switch(href){
                 case 'home':
-                    pageLoad('home.html')
+                    pageLoad('src/views/home.html')
                     break;
                 case 'contact': 
-                    pageLoad('contact.html')
+                    pageLoad('src/views/contact.html')
                     break;
                 case 'products':
-                    pageLoad('products.html')
+                    pageLoad('src/views/products.html')
                     productos();
                     break;
                 default:
-                    pageLoad('home.html')
+                    pageLoad('src/views/home.html')
             }
         })
     })
 
     end.addEventListener('click', (event) => {
         event.preventDefault();
-        pageLoad('end.html')
+        pageLoad('src/views/end.html')
     })
 })
 
 /* Pagina por defecto */
 window.onload = () => {
-    pageLoad('home.html')
+    pageLoad('src/views/home.html')
 }
