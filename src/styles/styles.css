@@ -151,8 +151,8 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 300px;
-    height: max-content;
+    width: 350px;
+    max-height: 500px;
     padding: 10px;
     top: 42px;
     right: -10px;
@@ -164,24 +164,18 @@ footer a:hover {
     background-color: white;
     display: none;
     z-index: 10;
+    overflow-y: scroll;
 }
 
 .nav-bar .buscar .shoping-cart .cart-list .cart-body{
-    border: 1px solid black;
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 5px;
     display: flex;
     gap: 18px;
 
-}
-
-.nav-bar .buscar .shoping-cart .cart-list .cart-body .trash{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 45px;
-    height: 35px;
 }
 
 .nav-bar .buscar .shoping-cart .cart-list .image img{
@@ -192,11 +186,36 @@ footer a:hover {
     height: 75px;
 }
 
-.nav-bar .buscar .shoping-cart .cart-list .details{
+.nav-bar .buscar .shoping-cart .cart-list .cart-details{
     display: flex;
-    flex-direction: column;
+    gap: 18px;
+    padding: 10px;
     align-items: center;
     justify-content: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.nav-bar .buscar .shoping-cart .cart-list .cart-details .trash{
+    width: 100px;
+    height: 40px;
+}
+
+.nav-bar .buscar .shoping-cart .cart-list .cart-details .trash .remove{
+    width: 70px;
+    height: 30px;
+    border: none;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+}
+
+.nav-bar .buscar .shoping-cart .cart-list .cart-details .trash .remove:hover{
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
 }
 
 .nav-bar .buscar .shoping-cart .cart-list .cart-footer{
@@ -209,6 +228,29 @@ footer a:hover {
     border-radius: 0 0 8px 8px;
     color: white;
 }
+
+.nav-bar .buscar .shoping-cart .cart-list .cart-footer button{
+    border: none;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.nav-bar .buscar .shoping-cart .cart-list .cart-footer button:hover{
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-bar .buscar .shoping-cart .cart-list .cart-footer{
+    position: relative;
+    bottom: 0;
+}
+
 /* HOME */
 .container {
     margin-top: 20px;

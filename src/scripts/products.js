@@ -1,7 +1,5 @@
 import { selectProduct } from "./cart.js";
 
-let productId = 0;
-
 const productos = () => {
     fetch('https://fakestoreapi.com/products')
         .then(res => res.json())
@@ -33,9 +31,8 @@ const productos = () => {
 
             })
 
-            selectProduct()
+            selectProduct();
         })
-
 }
 
 const productCardTemplate = `
