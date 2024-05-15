@@ -229,7 +229,8 @@ footer a:hover {
     color: white;
 }
 
-.nav-bar .buscar .shoping-cart .cart-list .cart-footer button{
+.nav-bar .buscar .shoping-cart .cart-list .cart-footer button, 
+.nav-bar .buscar .shoping-cart .cart-list .cart-footer a{
     border: none;
     background-color: white;
     color: black;
@@ -237,9 +238,12 @@ footer a:hover {
     width: 110px;
     height: 30px;
     border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
 }
 
-.nav-bar .buscar .shoping-cart .cart-list .cart-footer button:hover{
+.nav-bar .buscar .shoping-cart .cart-list .cart-footer button:hover,
+.nav-bar .buscar .shoping-cart .cart-list .cart-footer a:hover{
     border: 1px solid white;
     background-color: black;
     color: white;
@@ -386,4 +390,12 @@ footer a:hover {
     background-color: white;
     color: black;
     cursor: pointer;
+}
+
+.congratulations{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

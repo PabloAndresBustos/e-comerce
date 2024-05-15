@@ -1,9 +1,11 @@
 const cart = document.querySelector('.fas');
 const cartList = document.querySelector('.cart-list');
+const clear = document.querySelector('.cart-clear');
+const end = document.querySelector('.end');
+let suma = 0;
 
 const selectProduct = () => {
     const products = document.querySelectorAll('.addProduct');
-    let suma = 0;
     products.forEach(button => {
         button.addEventListener('click', () => {
             const cartList = document.querySelector('.cart-body');
@@ -52,6 +54,14 @@ cart.addEventListener('click', () => {
     } else {
         cartList.style.display = 'none';
     }
+});
+
+clear.addEventListener('click', () => {
+    const total = document.querySelector('.cart-footer p');
+    const lista = document.querySelector('.cart-body');
+    suma = 0;
+    lista.innerHTML = '';
+    total.textContent = 'Total: ' + suma;
 });
 
 export { selectProduct };

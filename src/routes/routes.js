@@ -13,17 +13,11 @@ const pageLoad = (page) => {
 
 }
 
-/* Carga de los scripts */
-const scriptLoad = (nameScript) => {
-    const script = document.createElement('script');
-    script.src = nameScript;
-    document.body.appendChild(script);
-}
-
 /* Manejador para la navegacion */
 document.addEventListener('DOMContentLoaded', () => {
     
     const navOptions = document.querySelectorAll('nav li');
+    const end = document.querySelector('.end')
 
     navOptions.forEach( ancord => {
         ancord.addEventListener('click', (event) => {
@@ -46,6 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     pageLoad('home.html')
             }
         })
+    })
+
+    end.addEventListener('click', (event) => {
+        event.preventDefault();
+        pageLoad('end.html')
     })
 })
 
