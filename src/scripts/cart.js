@@ -2,6 +2,7 @@ const cart = document.querySelector('.fas');
 const cartList = document.querySelector('.cart-list');
 const clear = document.querySelector('.cart-clear');
 const notification = document.querySelector('.notification')
+const empty = document.querySelector('.empty')
 
 let suma = 0;
 
@@ -35,6 +36,7 @@ const selectProduct = () => {
             const finalPrice = document.querySelector('.cart-footer p');
             finalPrice.textContent = 'Total: ' + suma.toFixed(2);
             notification.style.display = 'block';
+            empty.style.display = 'none';
         });
     });
 
@@ -44,7 +46,17 @@ const selectProduct = () => {
             const precioProducto = parseFloat(
                 event.target.parentElement.previousElementSibling.querySelector('p').textContent.split(':')[1].trim()
             );
-            suma -= precioProducto;
+            if(suma <= precioProducto){
+                suma = 0;
+                notification.style.display = 'none';
+            }else{
+                suma -= precioProducto;
+            }
+
+            if(suma === 0){
+                empty.style.display = 'block';
+            }
+
             event.target.parentElement.parentElement.remove();
             const finalPrice = document.querySelector('.cart-footer p');
             finalPrice.textContent = 'Total: ' + suma.toFixed(2);
@@ -62,11 +74,14 @@ cart.addEventListener('click', () => {
 
 clear.addEventListener('click', () => {
     const total = document.querySelector('.cart-footer p');
-    const lista = document.querySelector('.cart-body');
+    const lista = document.querySelectorAll('.cart-details');
     suma = 0;
-    lista.innerHTML = '';
+    lista.forEach(element => {
+        element.style.display = 'none';
+    })
     total.textContent = 'Total: ' + suma;
     notification.style.display = 'none'
+    empty.style.display = 'block';
 });
 
 export { selectProduct };
